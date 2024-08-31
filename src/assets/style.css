@@ -1,0 +1,147 @@
+#overlay-recording-screen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9998;
+	cursor: pointer;
+
+}
+
+#overlay-recording-screen .overlay-recording-countdown {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 10rem;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 0 0 10px #000;
+}
+
+.overlay-recording-countdown:before {
+	content: '321';
+	font-family: monospace;
+	display: inline-block;
+	width: 1ch;
+	overflow: hidden;
+	-webkit-animation: countdowns 3s steps(3) infinite;
+	-moz-animation: countdowns 3s steps(3) infinite;
+	-ms-animation: countdowns 3s steps(3) infinite;
+	-o-animation: countdowns 3s steps(3) infinite;
+	animation: countdowns 3s steps(3) infinite;
+}
+
+
+.overlay-recording-show {
+	display: block;
+}
+
+.overlay-recording-hidden {
+	display: none;
+}
+
+.btn-recording {
+	position: fixed;
+	top: 4px;
+	margin-left: 40%;
+	z-index: 9999;
+	width: 20%;
+	height: 50px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 1rem;
+	border-radius: 4px;
+	border: none;
+}
+
+.btn-recording-hidden {
+	display: none;
+	animation: disappear 1s;
+}
+
+.btn-recording-show {
+	/* display: block; */
+	animation: appear 1s;
+}
+
+@keyframes appear {
+	from {
+		top: -50px;
+		opacity: 0;
+		display: none;
+	}
+
+	to {
+		top: 4px;
+		opacity: 1;
+		display: block;
+	}
+}
+
+@keyframes disappear {
+	from {
+		top: 4px;
+		opacity: 1;
+		display: block;
+	}
+
+	to {
+		top: -50px;
+		opacity: 0;
+		display: none;
+	}
+}
+
+@-webkit-keyframes countdowns {
+	0% {
+		text-indent: 0
+	}
+
+	100% {
+		text-indent: -3ch;
+	}
+}
+
+@-moz-keyframes countdowns {
+	0% {
+		text-indent: 0
+	}
+
+	100% {
+		text-indent: -3ch;
+	}
+}
+
+@-ms-keyframes countdowns {
+	0% {
+		text-indent: 0
+	}
+
+	100% {
+		text-indent: -3ch;
+	}
+}
+
+@-o-keyframes countdowns {
+	0% {
+		text-indent: 0
+	}
+
+	100% {
+		text-indent: -3ch;
+	}
+}
+
+@keyframes countdowns {
+	0% {
+		text-indent: 0
+	}
+
+	100% {
+		text-indent: -3ch;
+	}
+}

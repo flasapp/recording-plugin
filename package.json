@@ -1,12 +1,32 @@
 {
-  "name": "npm-recording-screen",
-  "version": "1.0.1",
+  "name": "@flasap/recording-screen",
+  "version": "1.0.2",
   "description": "npm package to record the screen",
-  "main": "src/index.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/index.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc src/index.ts"
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
 }
